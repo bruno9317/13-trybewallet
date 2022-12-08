@@ -59,7 +59,7 @@ class Login extends React.Component {
           onClick={ this.handleClick }
           disabled={ isButtonDisabled }
         >
-          Enviar
+          Entrar
         </button>
       </form>
     );
