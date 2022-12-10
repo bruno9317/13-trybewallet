@@ -53,7 +53,7 @@ class Table extends Component {
 Table.propTypes = {
   // dispatch: PropTypes.func.isRequired,
   // expansesTam: PropTypes.number.isRequired,
-  // expanses: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({})])).isRequired,
+  expenses: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.shape({})])).isRequired,
 };
 
 const mapStateToProps = (state) => ({
