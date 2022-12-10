@@ -28,14 +28,14 @@ class WalletForm extends Component {
 
   handleSoma = () => {
     const { expanses, dispatch } = this.props;
-    console.log(expanses);
+    // console.log(expanses);
     const aqui = expanses;
     const valConvert = aqui.map((p) => (
       Object.entries(p.exchangeRates).find((e) => e[0] === p.currency)[1].ask * p.value));
     let soma = 0;
     for (let index = 0; index < valConvert.length; index += 1) {
       soma += valConvert[index];
-      console.log('oi');
+      // console.log('oi');
     }
     this.setState({ total: soma }, () => {
       dispatch(addWallet(this.state));
