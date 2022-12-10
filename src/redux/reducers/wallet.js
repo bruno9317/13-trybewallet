@@ -1,4 +1,4 @@
-import { ADD_WALLET_INFO } from '../actions';
+import { ADD_EXPENSE_INFO, ADD_WALLET_INFO } from '../actions';
 
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
 const INITIAL_STATE = {
@@ -6,6 +6,7 @@ const INITIAL_STATE = {
   expenses: [],
   editor: false,
   idToEdit: 0,
+  total: 0,
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -16,6 +17,18 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       ...action.payload,
     };
   }
+  case ADD_EXPENSE_INFO: {
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload],
+    };
+  }
+  // case ADD_TOTAL_INFO: {
+  //   return {
+  //     ...state,
+  //     ...action.payload,
+  //   };
+  // }
   default: return state;
   }
 };
