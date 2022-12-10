@@ -21,15 +21,6 @@ export const addWallet = (walletInfo) => {
     payload: {
       currencies: walletInfo.currencies,
       total: walletInfo.total,
-      // expenses: [{
-      //   id: walletInfo.id,
-      //   value: walletInfo.value,
-      //   description: walletInfo.description,
-      //   currency: walletInfo.currency,
-      //   method: walletInfo.method,
-      //   tag: walletInfo.tag,
-      // }],
-      // ...walletInfo,
     },
   };
 };
@@ -45,18 +36,7 @@ export const addExpenses = (expenseInfo) => {
       currency: expenseInfo.currency,
       method: expenseInfo.method,
       tag: expenseInfo.tag,
-      // total: expenseInfo.total,
       exchangeRates: expenseInfo.exchangeRates,
     },
   };
 };
-
-// export const addTotal = (totalInfo) => {
-//   console.log('chamou action');
-//   return {
-//     type: ADD_TOTAL_INFO,
-//     payload: {
-//       total: totalInfo.total,
-//     },
-//   };
-// };

@@ -27,7 +27,6 @@ class WalletForm extends Component {
   }
 
   handleSoma = () => {
-    // console.log('oi');
     const { expanses, dispatch } = this.props;
     console.log(expanses);
     const aqui = expanses;
@@ -38,7 +37,6 @@ class WalletForm extends Component {
       soma += valConvert[index];
       console.log('oi');
     }
-    // console.log(soma);
     this.setState({ total: soma }, () => {
       dispatch(addWallet(this.state));
     });
@@ -54,7 +52,6 @@ class WalletForm extends Component {
     const receba = await getCoins();
     this.setState({ id: expansesTam, exchangeRates: receba }, () => {
       dispatch(addExpenses(this.state));
-      // this.handleSoma();
       this.setState({
         id: '',
         value: '',

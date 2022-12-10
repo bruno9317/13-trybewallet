@@ -23,12 +23,6 @@ const walletReducer = (state = INITIAL_STATE, action) => {
       expenses: [...state.expenses, action.payload],
     };
   }
-  // case ADD_TOTAL_INFO: {
-  //   return {
-  //     ...state,
-  //     ...action.payload,
-  //   };
-  // }
   default: return state;
   }
 };
