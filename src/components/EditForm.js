@@ -48,7 +48,6 @@ class EditForm extends Component {
     expenses[idToEdit].currency = currency;
     expenses[idToEdit].method = method;
     expenses[idToEdit].tag = tag;
-    // console.log(expenses);
     dispatch(addNewExpenses(expenses));
     const valConvert = expenses.map((p) => (
       Object.entries(p.exchangeRates).find((f) => f[0] === p.currency)[1].ask * p.value));
@@ -60,7 +59,6 @@ class EditForm extends Component {
       dispatch(addWallet(this.state));
       dispatch(addEditorCondition(this.state));
     });
-    // dispatch(addEditorCondition(this.state));
   };
 
   render() {

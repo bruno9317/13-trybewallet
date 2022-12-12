@@ -53,37 +53,37 @@ class Table extends Component {
       <table>
         <thead>
           <tr>
-            <th scope="col">Valor</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Moeda</th>
-            <th scope="col">Método de pagamento</th>
-            <th scope="col">Tag</th>
-            <th scope="col">Câmbio utilizado</th>
-            <th scope="col">Valor convertido</th>
-            <th scope="col">Moeda de conversão</th>
-            <th scope="col">Editar/Excluir</th>
+            <th scope="col" data-testid="thValue">Valor</th>
+            <th scope="col" data-testid="thDescription">Descrição</th>
+            <th scope="col" data-testid="thCurrency">Moeda</th>
+            <th scope="col" data-testid="thMethod">Método de pagamento</th>
+            <th scope="col" data-testid="thTag">Tag</th>
+            <th scope="col" data-testid="thCambio">Câmbio utilizado</th>
+            <th scope="col" data-testid="thConverse">Valor convertido</th>
+            <th scope="col" data-testid="thCoin">Moeda de conversão</th>
+            <th scope="col" data-testid="thButtons">Editar/Excluir</th>
           </tr>
         </thead>
         <tbody>
           { expenses.map((p) => (
             <tr key={ p.id } id={ p.id }>
-              <td>{ parseFloat(p.value).toFixed(2) }</td>
-              <td>{ p.description }</td>
-              <td>
+              <td data-testid="tdVal">{ parseFloat(p.value).toFixed(2) }</td>
+              <td data-testid={ `${p.id}-tdDescrip` }>{ p.description }</td>
+              <td data-testid={ `${p.id}-tdSeiLa` }>
                 { Object.entries(p.exchangeRates).find((e) => (
                   e[0] === p.currency))[1].name }
               </td>
-              <td>{ p.method }</td>
-              <td>{ p.tag }</td>
-              <td>
+              <td data-testid={ `${p.id}-tdMethod` }>{ p.method }</td>
+              <td data-testid={ `${p.id}-tdTag` }>{ p.tag }</td>
+              <td data-testid={ `${p.id}-tdSeiLa2` }>
                 { parseFloat(Object.entries(p.exchangeRates).find((e) => (
                   e[0] === p.currency))[1].ask).toFixed(2) }
               </td>
-              <td>
+              <td data-testid={ `${p.id}-tdSeiLa3` }>
                 { parseFloat(Object.entries(p.exchangeRates).find((e) => (
                   e[0] === p.currency))[1].ask * p.value).toFixed(2) }
               </td>
-              <td>BRL</td>
+              <td data-testid={ `${p.id}-tdBRLFixo` }>BRL</td>
               <td>
                 <button
                   type="button"
